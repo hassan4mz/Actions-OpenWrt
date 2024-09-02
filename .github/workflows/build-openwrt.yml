@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/hassan4mz/openwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -69,6 +69,8 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
+      run: cd openwrt && ./git pull
+      run: cd openwrt && ./git checkout v23.05.4
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
