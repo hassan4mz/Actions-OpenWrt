@@ -29,9 +29,9 @@ jobs:
         with:
           node-version: 18
           check-latest: true
-      - name: Install npm packages
+    - name: Install npm packages
         run: sudo npm install -g uglify-js uglifycss
-      - name: Extract toolchain
+    - name: Extract toolchain
         run: tar zxf toolchain-mipsel_24kc_gcc-13.1.0_musl.tar.gz
 
     - name: SSH connection to Actions
