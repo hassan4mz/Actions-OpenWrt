@@ -27,6 +27,8 @@ jobs:
             zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
     - name: Install npm packages
       run: sudo npm install -g uglify-js uglifycss
+    - name: download  
+      run: wget https://github.com/tsl0922/DD-WRT/releases/download/toolchain/toolchain-mipsel_24kc_gcc-13.1.0_musl.tar.gz
     - name: Extract toolchain
       run: tar zxf toolchain-mipsel_24kc_gcc-13.1.0_musl.tar.gz
 
